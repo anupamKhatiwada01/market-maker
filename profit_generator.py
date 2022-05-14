@@ -6,11 +6,11 @@
 # It will return the profit
 
 # Take all the values as command line arguments
-import sys
+# import sys
 
-n = len(sys.argv)
-if n!=6:
-  raise Exception("Please enter the necessary arguments.")
+# n = len(sys.argv)
+# if n!=6:
+#   raise Exception("Please enter the necessary arguments.")
 
 
 # This is the main running script for the market_maker application
@@ -31,17 +31,17 @@ if n!=6:
 # We need to create the input dictionary global "object"
 # Muahahahahahahahahah!!!!!!!
 # JSON muahahahahahahaha!!!!!!!!!!!!!!!!!!!
-input_dict = {
-  'current':{
-    'avg': sys.argv[2],
-    'qty':sys.argv[3]
-  },
-  'new':{
-    'price':sys.argv[4],
-    'qty':sys.argv[5]
-  },
-  'target': sys.argv[1]
-}
+# input_dict = {
+#   'current':{
+#     'avg': sys.argv[2],
+#     'qty':sys.argv[3]
+#   },
+#   'new':{
+#     'price':sys.argv[4],
+#     'qty':sys.argv[5]
+#   },
+#   'target': sys.argv[1]
+# }
 
 
 
@@ -78,10 +78,29 @@ def calculate_profit(input_dict):
 
 
 # We need to focus in our main requirement ie. to maximize our profits. We have "assumed" that the best way to maximize profits is by reducing our average. This is our ultimate goal and one of the ways to do this is to buy at the least possible amount possible in order ro keep our average very low so even with a relatively lower target we will make good profits.
-cost=float(input_dict['new']['price'])*int(input_dict['new']['qty'])
-print(input_dict)
-print("Cost:",cost)
-print("Profit:",calculate_profit(input_dict))
+
+
+
+def profit_generated(args_array):
+  input_dict = {
+    'current':{
+      'avg':args_array[1],
+      'qty':args_array[2]
+    },
+    'new':{
+      'price':args_array[3],
+      'qty':args_array[4]
+    },
+    'target': args_array[0]
+  }
+
+
+  cost=float(input_dict['new']['price'])*int(input_dict['new']['qty'])
+  print(input_dict)
+  print("Cost:",cost)
+  print("Profit:",calculate_profit(input_dict))
+
+  return calculate_profit(input_dict)
 
 
 
