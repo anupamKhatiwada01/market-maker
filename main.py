@@ -1,3 +1,8 @@
+# What input should this application take?
+# It will take the below parameters in order
+
+# Current target,average,current quantity possesed, the new price of the stock, the quantity to buy
+
 import sys
 from profit_generator import profit_generated
 
