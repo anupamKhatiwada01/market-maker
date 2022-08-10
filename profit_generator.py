@@ -104,4 +104,8 @@ def profit_generated(args_array):
 
 
 
+# Write a better program to calculate things better
+# This is not upto the mark
+
+
 
